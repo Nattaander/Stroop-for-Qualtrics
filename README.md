@@ -1,14 +1,14 @@
 # Stroop-for-Qualtrics
  A pure JS implementation of the Stroop task designed to work embedded in a [Qualtrics](https://www.qualtrics.com/) survey and to be distributed online.
 
-## Deisgn Goals
+## Design Goals
  This codebase is not intended to be a flexible framework for building Stroop tasks from the core up, rather it is designed as a *plug-in, configure and play* system needing minimal intervention.
 
  The conceptual design of the codebase is to generate a "slide deck" based on the configuration, separate the slides into as many blocks as necessary ensuring each block meets the criteria on the config, then shuffle the blocks and present them.
 
  The primary reasons I built this are:
  1. To create an accessible, open-source, online version of the Stroop for students and researchers of Applied Psychology to use as part of studies which
- 2. Easily slots into their existing system of choice for surveys (Qualtrics) and
+ 2. Easily slots into their existing system of choice for surveys (Qualtrics) and can be easily unpacked with a script and
  3. To *very deliberately* bury the notion that we need E-Prime to do this kind of thing
 
 ## Features
@@ -28,8 +28,10 @@
  4. Save
  5. Preview your survey, and you should have a button that says "Start Task". Click this to run the Stroop with default configuration
 
+ Once you've run through the task, you can export your data from Qualtrics as a CSV file (using their normal process). Rename that CSV file to `stroop.csv` and place it in the same folder as the `unpack_stroop_results.py`. Run `unpack_stroop_results.py` to receive an extrapolated dataset of pure Stroop data in csv format.
+
 ## Configuration
-| SETTING  | VARIABLE NAME | DATATYPE | DEFAULT VALUE |
+| DESCRIPTION  | VARIABLE NAME | DATATYPE | DEFAULT VALUE |
 | ------------- | ------------- | ------------- | ------------- |
 | Total number of trials | TOTALTRIALS | INT | 128 |
 | Number of blocks to split the trial into | INT | NUMBEROFSUBBLOCKS | 2 |
@@ -79,5 +81,5 @@ There are only a handful of thing in the codebase making it Qualtrics-specific:
 - Separate the options from the top of the code into embedded data variables in Qualtrics that can be modified by an end-user
 - Add additional config options for button text, feedback messages, instructions text, post-trial practice feedback timing, etc
 - A Readthedocs.io page to explain the methods
-- Refactor the unpacking script & make it presentable
+- Refactor the unpacking script & make it presentable - maybe turn into a standalone exe which unpacks the data without the need for the user to have python installed
 - Consider an evaluation and publication to make it solidly "research quality"
