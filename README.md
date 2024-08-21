@@ -1,6 +1,9 @@
 # Stroop-for-Qualtrics
  A pure JS implementation of the Stroop task designed to work embedded in a [Qualtrics](https://www.qualtrics.com/) survey and to be distributed online.
 
+> [!WARNING]
+> This implementation assumes access to the *paid* Qualtrics API
+
 ## Design Goals
  This codebase is not intended to be a flexible framework for building Stroop tasks from the core up, rather it is designed as a *plug-in, configure and play* system needing minimal intervention.
 
