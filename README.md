@@ -68,16 +68,16 @@ It is still possible to use this implementation without the paid API, *however* 
 There is also no reason why this won't work independant of Qualtrics provided you have somewhere to host the code and can replace the Qualtrics embedded data storage with calls to a database of some kind.
 
 There are only a handful of thing in the codebase making it Qualtrics-specific:
-- Line 611: `Qualtrics.SurveyEngine.setEmbeddedData( ... );`
-- Line 616: `Qualtrics.SurveyEngine.setEmbeddedData( ... );`
-- Lines 1108 - 1112: `Qualtrics.SurveyEngine.addOnReady(function(){ ... });`
-- Lines 1080 - 1106: `Qualtrics.SurveyEngine.addOnload(function(){this_q = this.getQuestionContainer();...});`
+- Line 617: `Qualtrics.SurveyEngine.setEmbeddedData( ... );`
+- Line 622: `Qualtrics.SurveyEngine.setEmbeddedData( ... );`
+- Lines 1114 - 1118: `Qualtrics.SurveyEngine.addOnReady(function(){ ... });`
+- Lines 1086 - 1112: `Qualtrics.SurveyEngine.addOnload(function(){this_q = this.getQuestionContainer();...});`
 
 > [!TIP]
 > For quick-and-dirty independance:
-> - Remove lines 1108 - 1112 completely. They only hide the "Next" button in Qualtrics.
+> - Remove lines 1114 - 1118 completely. They only hide the "Next" button in Qualtrics.
 > - Replace the calls in lines 611 and 616 with calls to your own database.
-> - Lines 1080 - 1106 clear the Qualtrics Question container and replace it with a start button - replace with whatever triggers the beginning of the test for you (e.g. a html button)
+> - Lines 1086 - 1112 clear the Qualtrics Question container and replace it with a start button - replace with whatever triggers the beginning of the test for you (e.g. a html button)
 
 ## Non-exhaustive, non-commital list of possible todos
 - Create an independant implementation running in a HTML page
